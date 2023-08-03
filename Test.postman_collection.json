@@ -147,7 +147,7 @@
 								},
 								{
 									"key": "address",
-									"value": "http://weezh.ir",
+									"value": "http://google.com",
 									"type": "default"
 								}
 							]
@@ -186,7 +186,7 @@
 								},
 								{
 									"key": "address",
-									"value": "https://weezh.ir",
+									"value": "https://google.com",
 									"type": "text"
 								}
 							]
@@ -226,7 +226,7 @@
 								},
 								{
 									"key": "address",
-									"value": "https://weezh.ir",
+									"value": "https://google.com",
 									"type": "text"
 								}
 							]
@@ -515,7 +515,7 @@
 								},
 								{
 									"key": "address",
-									"value": "https://weezh.ir",
+									"value": "https://google.com",
 									"type": "text"
 								}
 							]
@@ -558,7 +558,7 @@
 								},
 								{
 									"key": "address",
-									"value": "https://weezh.ir",
+									"value": "https://google.com",
 									"type": "text"
 								}
 							]
@@ -749,7 +749,7 @@
 							"formdata": [
 								{
 									"key": "address",
-									"value": "https://weezh.ir",
+									"value": "https://google.com",
 									"type": "default"
 								}
 							]
