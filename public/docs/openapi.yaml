@@ -1,0 +1,493 @@
+openapi: 3.0.3
+info:
+  title: Subscribtor
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: vquigley@example.org
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 255 characters.'
+                  example: 7l57Ap
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ejxksnuqldm
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: oberbrunner.ian@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 255 characters.'
+                  example: 'X,%.dk'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/sites:
+    get:
+      summary: ''
+      operationId: getApiSites
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiSites
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vgzilywajicgoefxwpg
+                address:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: zcqiqwvsmvtwxkiglmjtejgg
+              required:
+                - address
+      security: []
+  '/api/sites/{id}':
+    put:
+      summary: ''
+      operationId: putApiSitesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: eybmxplg
+                address:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: zpmxanacwyhfqikixwixcns
+              required:
+                - address
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiSitesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the site.'
+        example: enim
+        required: true
+        schema:
+          type: string
+  '/api/subscriber-posts/{siteId}/list':
+    get:
+      summary: ''
+      operationId: getApiSubscriberPostsSiteIdList
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: siteId
+        description: ''
+        example: commodi
+        required: true
+        schema:
+          type: string
+  /api/subscriber-posts/latest:
+    get:
+      summary: ''
+      operationId: getApiSubscriberPostsLatest
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/subscriber-posts/list:
+    get:
+      summary: ''
+      operationId: getApiSubscriberPostsList
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/publish-posts/check:
+    get:
+      summary: ''
+      operationId: getApiPublishPostsCheck
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/publish-posts/{siteId}/list':
+    get:
+      summary: ''
+      operationId: getApiPublishPostsSiteIdList
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: siteId
+        description: ''
+        example: sit
+        required: true
+        schema:
+          type: string
+  /api/publish-posts/latest:
+    get:
+      summary: ''
+      operationId: getApiPublishPostsLatest
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/publish-posts:
+    get:
+      summary: ''
+      operationId: getApiPublishPosts
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiPublishPosts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: atzxslahsi
+                body:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: sllvkjrrott
+                is_published:
+                  type: boolean
+                  description: ''
+                  example: true
+                site_id:
+                  type: string
+                  description: ''
+                  example: ab
+              required:
+                - title
+                - body
+                - is_published
+                - site_id
+      security: []
+  '/api/publish-posts/{id}':
+    get:
+      summary: ''
+      operationId: getApiPublishPostsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiPublishPostsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: blzpfxnahdgbcmcjapb
+                body:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: nwsvzwxeklhmqexjzynhbjgezw
+                is_published:
+                  type: string
+                  description: 'Must be one of <code>0</code> or <code>1</code>.'
+                  example: '0'
+              required:
+                - title
+                - body
+                - is_published
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiPublishPostsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the publish post.'
+        example: alias
+        required: true
+        schema:
+          type: string
+  /api/subscribe/list:
+    get:
+      summary: ''
+      operationId: getApiSubscribeList
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/subscribe:
+    post:
+      summary: ''
+      operationId: postApiSubscribe
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: taskrbudfqcebyuk
+              required:
+                - address
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
