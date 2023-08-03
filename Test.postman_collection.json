@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "7ffc065b-da4e-4e81-84e9-cd709a3fbe04",
+		"name": "MaxBase Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mohmhasan@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mohmhasan@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "mohmhasan@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sites",
+			"item": [
+				{
+					"name": "List of Sites",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/sites",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Site",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test",
+									"description": "optional",
+									"type": "default"
+								},
+								{
+									"key": "address",
+									"value": "http://weezh.ir",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/sites",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Site",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Weezh",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "https://weezh.ir",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/sites/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"sites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Site",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Weezh",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "https://weezh.ir",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/sites/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"sites",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publish Posts",
+			"item": [
+				{
+					"name": "List of Posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts?site_id&is_published=&orderBy=&title=",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts"
+							],
+							"query": [
+								{
+									"key": "site_id",
+									"value": null
+								},
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "field name"
+								},
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Posts Of Specify Site",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/1/list?is_published=&orderBy=&title=",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"1",
+								"list"
+							],
+							"query": [
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "field name"
+								},
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Latest Posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/latest/list?is_published=&title=&site_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"latest",
+								"list"
+							],
+							"query": [
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "title",
+									"value": ""
+								},
+								{
+									"key": "site_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test",
+									"description": "optional",
+									"type": "default"
+								},
+								{
+									"key": "body",
+									"value": "test",
+									"type": "default"
+								},
+								{
+									"key": "site_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "is_published",
+									"value": "0",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "is_published",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Weezh",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "https://weezh.ir",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check And Send To Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Weezh",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "https://weezh.ir",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/publish-posts/check",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"publish-posts",
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriber Posts",
+			"item": [
+				{
+					"name": "List of Posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/subscriber-posts/list?site_id&is_published=&orderBy=&title=",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subscriber-posts",
+								"list"
+							],
+							"query": [
+								{
+									"key": "site_id",
+									"value": null
+								},
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "field name"
+								},
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Posts Of Specify Site",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/subscriber-posts/1/list?is_published=&orderBy=&title=",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subscriber-posts",
+								"1",
+								"list"
+							],
+							"query": [
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "field name"
+								},
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Latest Posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/subscriber-posts/latest/list?is_published=&title=",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subscriber-posts",
+								"latest",
+								"list"
+							],
+							"query": [
+								{
+									"key": "is_published",
+									"value": ""
+								},
+								{
+									"key": "title",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"item": [
+				{
+					"name": "Subscribe List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/subscribe/list",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subscribe",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "address",
+									"value": "https://weezh.ir",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/subscribe",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "TOKEN",
+			"value": "1|7R9vMp9emH8rrdS0N6ggMo68wOLnHXKkguT2Hc4I",
+			"type": "default"
+		}
+	]
+}

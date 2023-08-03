@@ -21,12 +21,12 @@ class AuthControllerTest extends TestCase
 
     public function test_register_returns_a_validation_error_response()
     {
-        $email = 'sadegh.h.2007@gmail.com';
+        $email = 'mohmhasan@gmail.com';
 
         User::query()->firstOrCreate([
             'email' => $email
         ], [
-            'name' => 'Sadeq',
+            'name' => 'Hasan',
             'password' => bcrypt(123456)
         ]);
 
